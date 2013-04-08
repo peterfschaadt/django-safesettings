@@ -49,9 +49,9 @@ cp settings /home/django/web/{{ PROJECT_NAME }}/{{ PROJECT_NAME }}
 
 Here are two different methods of placing your environment-specific ```local_settings.py``` file inside your settings folder. It is important that each environmeny's ```local_settings.py``` is not tracked by your version control system (django-safesettings has it included in .gitignore).
 
-1. I recommend an SFTP tool like [FileZilla](https://filezilla-project.org) or [CyberDuck](http://cyberduck.ch) to securely place ```local_settings.py``` on the server. However, this is harder to automate with a script than the Fabfile command below.
+1\. I recommend an SFTP tool like [FileZilla](https://filezilla-project.org) or [CyberDuck](http://cyberduck.ch) to securely place ```local_settings.py``` on the server. However, this is harder to automate with a script than the Fabfile command below.
 
-2. Use a [Fabric](http://docs.fabfile.org/en/1.6/) command to place the correct ```local_settings.py``` file on your server. Here's a simple command to put in your ```fabfile.py``` to copy your local_settings.
+2\. Use a [Fabric](http://docs.fabfile.org/en/1.6/) command to place the correct ```local_settings.py``` file on your server. Here's a simple command to put in your ```fabfile.py``` to copy your local_settings.
 
 ```python
 def copy_local_settings():
@@ -62,7 +62,7 @@ def copy_local_settings():
         /home/django/{{ PROJECT_NAME }}/{{ PROJECT_NAME }}/settings/)
 ```
 
-3. Use [Secure Copy](http://www.hypexr.org/linux_scp_help.php) (SCP) to transfer the file over SSH.
+3\. Use [Secure Copy](http://www.hypexr.org/linux_scp_help.php) (SCP) to transfer the file over SSH.
 
 ```
 scp local_settings.py <USER>@<HOST>:/home/django/{{ PROJECT_NAME }}/{{ PROJECT_NAME }}/settings/
