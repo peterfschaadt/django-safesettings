@@ -28,22 +28,22 @@ This file holds the sensitive settings for each environment, like database crede
 
 ## Getting started
 
-1. Git clone and navigate inside the repository
+1\. Git clone and navigate inside the repository
 
 ```
 git clone https://github.com/peterfschaadt/django-safesettings
 cd django-safesettings
 ```
 
-2. Copy the ```settings``` directory and its contents from this repository to the location of your app's ```settings.py```
+2\. Copy the ```settings``` directory and its contents from this repository to the location of your app's ```settings.py```
 
 ```
 cp settings /home/django/web/{{ PROJECT_NAME }}/{{ PROJECT_NAME }}
 ```
 
-3. Remove the ```settings.py``` file that you will no longer be using. You can also rename it (Example: ```old_settings.py```) and remove later if you need to copy individual settings out of it.
+3\. Remove the ```settings.py``` file that you will no longer be using. You can also rename it (Example: ```old_settings.py```) and remove later if you need to copy individual settings out of it.
 
-4. Create a file called ```local_settings.py``` using ```example_local_settings.py``` as a template. Be sure to [generate a new Django key](http://www.miniwebtool.com/django-secret-key-generator) or copy the one over from your previous ```settings.py``` file (only if it was never checked into version control).
+4\. Create a file called ```local_settings.py``` using ```example_local_settings.py``` as a template. Be sure to [generate a new Django key](http://www.miniwebtool.com/django-secret-key-generator) or copy the one over from your previous ```settings.py``` file (only if it was never checked into version control).
 
 ## Copying local_settings.py
 
