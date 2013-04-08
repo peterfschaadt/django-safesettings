@@ -4,8 +4,8 @@ I created [django-safesettings](https://github.com/peterfschaadt/django-safesett
 
 ## Settings variables
 
-{{ AUTHOR_NAME }} = Your name
-{{ AUTHOR_EMAIL }} = Your email address
+{{ AUTHOR_NAME }} = Your name  
+{{ AUTHOR_EMAIL }} = Your email address  
 {{ PROJECT_NAME }} = The name of your Django project (the folder containing settings.py)
 
 ## Getting started
@@ -17,13 +17,15 @@ git clone https://github.com/peterfschaadt/django-safesettings
 cd django-safesettings
 ```
 
-1. Copy the ```settings``` directory and its contents from this repository to the location of your app's ```settings.py```
+2. Copy the ```settings``` directory and its contents from this repository to the location of your app's ```settings.py```
 
 ```
 cp settings /home/django/web/{{ PROJECT_NAME }}/{{ PROJECT_NAME }}
 ```
 
-2. Remove the ```settings.py``` file that you will no longer be using. You can also rename it (Example: ```old_settings.py```).
+3. Remove the ```settings.py``` file that you will no longer be using. You can also rename it (Example: ```old_settings.py```).
+
+4. Create a file called ```local_settings.py``` using ```example_local_settings.py``` as a template. Be sure to generate a new Django key or copy the one over from your previous ```settings.py``` file.
 
 
 ## Copying local_settings.py
