@@ -8,6 +8,24 @@ I created [django-safesettings](https://github.com/peterfschaadt/django-safesett
 {{ AUTHOR_EMAIL }} = Your email address  
 {{ PROJECT_NAME }} = The name of your Django project (the folder containing settings.py)
 
+## Files
+
+### common_settings.py
+
+This file holds the settings that are consistent between your development and production environments. Think of it as containing shared settings.
+
+### dev_settings.py
+
+This file holds the unique settings for your development environment.
+
+### prod_settings.py
+
+This file holds the unique settings for your production environment.
+
+### local_settings.py
+
+This file holds the sensitive settings for each environment, like database credentials, API keys, and your Django secret key. You will have one ```local_settings.py``` file for each environment, stored outside of your repository. See below for "Copying local_settings.py." This file does NOT get checked into version control!
+
 ## Getting started
 
 1. Git clone and navigate inside the repository
@@ -23,10 +41,9 @@ cd django-safesettings
 cp settings /home/django/web/{{ PROJECT_NAME }}/{{ PROJECT_NAME }}
 ```
 
-3. Remove the ```settings.py``` file that you will no longer be using. You can also rename it (Example: ```old_settings.py```).
+3. Remove the ```settings.py``` file that you will no longer be using. You can also rename it (Example: ```old_settings.py```) and remove later if you need to copy individual settings out of it.
 
-4. Create a file called ```local_settings.py``` using ```example_local_settings.py``` as a template. Be sure to generate a new Django key or copy the one over from your previous ```settings.py``` file.
-
+4. Create a file called ```local_settings.py``` using ```example_local_settings.py``` as a template. Be sure to [generate a new Django key](http://www.miniwebtool.com/django-secret-key-generator) or copy the one over from your previous ```settings.py``` file (only if it was never checked into version control).
 
 ## Copying local_settings.py
 
@@ -45,6 +62,12 @@ def copy_local_settings():
         /home/django/{{ PROJECT_NAME }}/{{ PROJECT_NAME }}/settings/)
 ```
 
+3. Use [Secure Copy](http://www.hypexr.org/linux_scp_help.php) (SCP) to transfer the file over SSH.
+
+```
+scp local_settings.py <USER>@<HOST>:/home/django/{{ PROJECT_NAME }}/{{ PROJECT_NAME }}/settings/
+```
+
 ## Background
 
-I created django-safesettings to use on my [ChromeFiddle](http://chromefiddle.com) project. I wanted to host the site's source code on GitHub but I needed to protect Django's secret key, database credentials, and my email password. With this module I was able to make the source code available on GitHub, but I could still protect the security of my site.
+I created django-safesettings to use on my [ChromeFiddle](http://chromefiddle.com) project. I wanted to host the site's source code publicly on GitHub but I needed to protect Django's secret key, database credentials, and my email password. With this module I was able to make the source code available on GitHub, but I could still protect the security of my site.
