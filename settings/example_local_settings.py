@@ -4,10 +4,10 @@
 
 __author__ = '{{ AUTHOR_NAME }}'
 
-ENV_STATE = 'PROD' # Either DEV, STAGING, or PROD,
+ENV_STATE = 'PROD' # Either DEV, STAGING, or PROD
 
-# Development Database
-DEV_DB = {
+# Production Database
+PROD_DB = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',  # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': '',  # Or path to database file if using sqlite3.
@@ -20,6 +20,6 @@ DEV_DB = {
 
 # Unique secret key -- do not share with anyone or post online
 # Use http://www.miniwebtool.com/django-secret-key-generator/ to generate a new secret key
-DEV_SECRET_KEY = 'n&mw-6bh7-wo1i7y2-#5q$qnmwbp%(@_&&hrark98r!kh9u!(9'
+PROD_SECRET_KEY = 'n&mw-6bh7-wo1i7y2-#5q$qnmwbp%(@_&&hrark98r!kh9u!(9'
 
-DEV_EMAIL_PASSWORD = ''
+PROD_EMAIL_PASSWORD = ''
